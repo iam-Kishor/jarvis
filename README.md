@@ -154,4 +154,5 @@ It motivates future development and helps others discover the project.
 Kishor Thadi
 
 GitHub: https://github.com/iam-Kishor
+
 LinkedIn: www.linkedin.com/in/kishorthadi
