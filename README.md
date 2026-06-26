@@ -1,15 +1,8 @@
-<img width="800" height="378" alt="jarvis" src="https://github.com/user-attachments/assets/f1b599c1-442f-4044-beea-0a0aeec0f391" />🤖 Jarvis – AI Powered Research Agent
+<img width="800" height="378" alt="jarvis" src="https://github.com/user-attachments/assets/f1b599c1-442f-4044-beea-0a0aeec0f391" />
+
+🤖 Jarvis – AI Powered Research Agent
 
 An intelligent AI research assistant that automates research, analyzes information, synthesizes insights, and streamlines knowledge discovery through a modern conversational interface.
-
-
-
-
-
-
-
-
-
 
 📖 Overview
 
