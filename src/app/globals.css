@@ -1,26 +1,105 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-purple: #ef4444; /* Stark Red */
+  --color-brand-cyan: #fbbf24; /* Stark Gold */
+  --animate-aurora: floatBg 20s ease infinite alternate;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #05050a; /* Stark Lab Black */
+  --foreground: #f3f4f6;
+  --font-sans: var(--font-geist-sans), sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background) !important;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(239, 68, 68, 0.15), transparent 45%), /* Stark Hot Red */
+    radial-gradient(circle at 90% 10%, rgba(245, 158, 11, 0.12), transparent 45%), /* Stark Gold */
+    radial-gradient(circle at 50% 80%, rgba(34, 211, 238, 0.08), transparent 50%); /* Arc Reactor Cyan */
+  filter: blur(80px);
+  z-index: -1;
+  pointer-events: none;
+  animation: floatBg 15s ease infinite alternate;
+}
+
+@keyframes floatBg {
+  from { transform: translateY(0px) scale(1); }
+  to { transform: translateY(-40px) scale(1.05); }
+}
+
+/* Glassmorphism custom styles in Iron Man Stark HUD style */
+.glass-panel {
+  background: rgba(10, 10, 18, 0.55);
+  backdrop-filter: blur(25px) saturate(170%);
+  border: 1px solid rgba(239, 68, 68, 0.15); /* Red HUD outline */
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(18, 18, 30, 0.65);
+  border-color: rgba(245, 158, 11, 0.35); /* Glow to Stark Gold on hover */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), 0 0 20px rgba(239, 68, 68, 0.2);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #ef4444, #fbbf24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-purple {
+  background: linear-gradient(135deg, #fbbf24, #f97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-gradient-brand {
+  background: linear-gradient(135deg, #ef4444, #fbbf24); /* Stark Red-Gold Gradient */
+}
+
+/* Hide scrollbars for chrome, safari and opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbars for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(239, 68, 68, 0.2);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(245, 158, 11, 0.4);
 }
